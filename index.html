@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/site.css">
+    <title>Trabalho final</title>
+</head>
+
+<body>
+
+    <header class="site-header">
+        <h1>Trabalho final</h1>
+        <div class="menu">
+            <button class="menupbtn">Menu</button>
+            <div class="menu-conteiner">
+                <a href="index.html">Pagina inicial</a>
+                <a href="funcao.html">Função</a>
+                <div class="submenu">
+                    <a href="#">Arrays &#9662;</a>
+                    <div class="submenu-conteudo">
+                        <a href="uni.html">Unidimensionais</a>
+                        <a href="multi.html">Multidimensionais</a>
+                    </div>
+                </div>
+                <div class="submenu">
+                    <a href="#">Membros &#9662;</a>
+                    <div class="submenu-conteudo">
+                        <a href="membros.html">Membros</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-content">
+
+        <div class="seletor-container">
+            <button class="seletor-btn" onclick="mostrarCaixa(0)">Exemplo 1</button>
+            <button class="seletor-btn" onclick="mostrarCaixa(1)">Exemplo 2</button>
+            <button class="seletor-btn" onclick="mostrarCaixa(2)">Exemplo 3</button>
+        </div>
+
+        <div class="caixa-container">
+            <label for="texto1">Exemplo de Código 1</label>
+            <textarea id="texto1" placeholder="Digite ou cole seu texto aqui...">sei la so testc</textarea>
+            <div class="botoes-container">
+                <button>Ver Exemplo</button>
+               
+            </div>
+        </div>
+
+        <div class="caixa-container">
+            <label for="texto2">Exemplo de Código 2</label>
+            <textarea id="texto2" placeholder="Digite ou cole seu texto aqui..."></textarea>
+            <div class="botoes-container">
+                <button>Ver Exemplo</button>
+                
+            </div>
+        </div>
+
+        <div class="caixa-container">
+            <label for="texto3">Exemplo de Código 3</label>
+            <textarea id="texto3" placeholder="Digite ou cole seu texto aqui..."></textarea>
+            <div class="botoes-container">
+                <button>Ver Exemplo</button>
+                
+            </div>
+        </div>
+    </main>
+
+    <script src="js/js.js"></script>
+</body>
+
+</html>
