@@ -44,9 +44,38 @@
 
         <div class="caixa-container">
             <label for="texto1">Exemplo de Código 1</label>
-            <textarea id="texto1" placeholder="Digite ou cole seu texto aqui...">sei la so testc</textarea>
+            <textarea id="texto1" placeholder="Digite ou cole seu texto aqui...">Neste exemplo de funçãoes vamos encontrar o seguinte codigo: 
+                <?php
+
+                    $libera = 1;
+                    //essa variavel controla a execucao da funcao contador
+                    function contador(){
+                        echo "Contando ate 10: <br>";
+                        for($i=1; $i<=10; $i++){
+                            echo $i . "<br>";
+                        }
+                        //chaama a funcao mensagem apos o termino da contagem
+                        mensagem();
+                    }
+                    // imprime uma mensagem padrao 
+                    function mensagem(){
+                        echo "fizemos a contagem, Até a proxima <br>";
+                    }
+
+                    if ($libera === 1){
+                        // quando entra aqui chama a funcao contador
+                        contador();
+                    }
+                
+                ?>
+            </textarea>
             <div class="botoes-container">
-                <button>Ver Exemplo</button>
+                <form action="php/baggiomulit.php" method="POST">
+                    
+                    <button type="submit" >Ver Exemplo</button>
+                </form>
+               
+            </div>
                
             </div>
         </div>
