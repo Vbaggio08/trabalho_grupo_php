@@ -24,16 +24,12 @@
                         <a href="multi.html">Multidimensionais</a>
                     </div>
                 </div>
-                <div class="submenu">
-                    <a href="#">Membros &#9662;</a>
-                    <div class="submenu-conteudo">
-                        <a href="membros.html">Membros</a>
-                    </div>
+                
                 </div>
             </div>
         </div>
     </header>
-
+    <h3>Exemplos de Funções em PHP</h3>
     <main class="main-content">
 
         <div class="seletor-container">
@@ -43,8 +39,9 @@
         </div>
 
         <div class="caixa-container">
-            <label for="texto1">Exemplo de Código 1</label>
-            <textarea id="texto1" placeholder="Digite ou cole seu texto aqui...">Neste exemplo de funçãoes vamos encontrar o seguinte codigo: 
+            <label for="texto1">Contador de 1 a 10</label>
+            <textarea id="texto1" >
+                Neste exemplo de funçãoes vamos encontrar o seguinte codigo: 
                 <?php
 
                     $libera = 1;
@@ -70,7 +67,7 @@
                 ?>
             </textarea>
             <div class="botoes-container">
-                <form action="php/baggiomulit.php" method="POST">
+                <form action="php/baggiofuncao.php" method="POST">
                     
                     <button type="submit" >Ver Exemplo</button>
                 </form>
@@ -78,25 +75,134 @@
             </div>
                
             </div>
-        </div>
+        
 
         <div class="caixa-container">
-            <label for="texto2">Exemplo de Código 2</label>
-            <textarea id="texto2" placeholder="Digite ou cole seu texto aqui..."></textarea>
-            <div class="botoes-container">
-                <button>Ver Exemplo</button>
-                
-            </div>
-        </div>
+            <label for="texto2">calculadora</label>
+            <textarea id="texto2" >
+                <?php
+                    //Números já definidos.
+                    $num1 = 30;
+                    $num2 = 4;
 
-        <div class="caixa-container">
-            <label for="texto3">Exemplo de Código 3</label>
-            <textarea id="texto3" placeholder="Digite ou cole seu texto aqui..."></textarea>
+                    //Função que soma dois números.
+                    function soma($num1, $num2){
+                        return $num1 + $num2;
+                        //Retorna soma dos números.
+                    }
+                    function subtrai($num1, $num2){
+                        return $num1 - $num2;
+                    }
+                    function multiplica($num1, $num2){
+                        return $num1 * $num2;
+                    }
+                    function divide($num1, $num2){
+                        return $num1 / $num2;
+
+                    }
+                    
+                    //Mostra resultado das operações.
+                    echo "<h3>Resultados das Operações:</h3>";
+                    echo "Números predefinidos: 30 e 4 <br><br>";
+                    echo " 30 + 4 = " . soma($num1, $num2) . "<br>";
+                    echo " 30 - 4 = " . subtrai($num1, $num2) . "<br>";
+                    echo " 30 * 4 = " . multiplica($num1, $num2) . "<br>";
+                    echo " 30 / 4 = " . divide($num1, $num2) . "<br>";
+                    header("refresh:10; url=../funcao.html");
+
+
+
+                ?>
+            </textarea>
             <div class="botoes-container">
-                <button>Ver Exemplo</button>
+              <div class="botoes-container">
+                <form action="php/christopherFuncao.php" method="POST">
+                    
+                    <button type="submit" >Ver Exemplo</button>
+                </form>
                 
+                </div>
             </div>
         </div>
+        <div class="caixa-container">
+            <label for="texto1">Que dia e hoje?</label>
+            <textarea id="texto1" >
+               <?php
+                    /*Nesse codigo definimos uma função chamada data_de_hoje(), que 
+                    usa getdate() para obter as informações da data atual e 
+                    identifica o número do dia da semana. Com um switch, ele compara 
+                    esse número e retorna o nome correspondente do dia (domingo, 
+                    segunda, etc.). Depois, a função é chamada e o resultado é 
+                    exibido na tela com echo, mostrando o dia atual.*/
+
+                    //Declarandoa a função
+                    function data_de_hoje() 
+                    {
+                    //A função getdate() fornece informações detalhadas da data atual
+                        $hoje = getdate();
+
+                        //Usando switch para verificar qual dia da semana
+                        //"wday" Retorna o número do dia da semana:
+                        /* 1 = Domingo
+                        2 = Segunda-feira
+                        3 = Terça-feira
+                        4 = Quarta-feira
+                        5 = Quinta-feira
+                        6 = Sexta-feira
+                        7 = Sábado
+                        */
+                        switch($hoje["wday"])
+                        {
+                            case 1:
+                                return "Hoje é domingo";
+                            break;
+                                
+                            case 2:
+                                return "Hoje é segunda-feira";
+                            break;
+
+                            case 3:
+                                return "Hoje é terça-feira";
+                            break;
+                                
+                            case 4:
+                                return "Hoje é quarta-feira";
+                            break;
+
+                            case 5:
+                                return "Hoje é quinta-feira";
+                            break;
+
+                            case 6:
+                                return "Hoje é sexta-feira";
+                            break;
+
+                            case 7:
+                                return "Hoje é sábado";
+                            break;
+                        }
+                    }
+                    
+                    //($dia) Cria uma variável para armazenar o retorno da função
+                    //data_de_hoje() Chama a função
+                    //O valor retornado pelo return da função é armazenado em $dia
+                    $dia = data_de_hoje();
+                    //Exibe o valor armazenado em $dia
+                    echo $dia;
+                    header("refresh:10; url=../funcao.html");
+                ?>
+            </textarea>
+            <div class="botoes-container">
+                <form action="php/vitorfuncao.php" method="POST">
+                    
+                    <button type="submit" >Ver Exemplo</button>
+                </form>
+               
+            </div>
+               
+            </div>
+
+      
     </main>
 
     <script src="js/js.js"></script>

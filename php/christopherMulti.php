@@ -17,6 +17,6 @@ echo "<h3>Lista de Carros por Marca:</h3>";
             echo "-- " . $array[$i][$j] . "<br>";
         }
     }
-
+header("refresh:15; url=../multi.html");
 
 ?>

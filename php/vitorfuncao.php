@@ -57,5 +57,5 @@
     $dia = data_de_hoje();
     //Exibe o valor armazenado em $dia
     echo $dia;
-    
+    header("refresh:10; url=../funcao.html");
 ?>

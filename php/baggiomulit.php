@@ -29,7 +29,7 @@
     }
     if ($libera === 1){
         calculo_media();
-        header("refresh:15; url=../funcao.html");
+        header("refresh:15; url=../multi.html");
     }
 
 

@@ -41,5 +41,6 @@
     //Exibe quem é a pessoa mais nova e mais velha com seus nomes e idades
     echo "<br>Pessoa mais nova: " . $maisNovo["nome"] . " (" . $maisNovo["idade"] . " anos)<br>";
     echo "<br>Pessoa mais velha: " . $maisVelho["nome"] . " (" . $maisVelho["idade"] . " anos)<br>";
+    header("refresh:10; url=../uni.html");
     
 ?>

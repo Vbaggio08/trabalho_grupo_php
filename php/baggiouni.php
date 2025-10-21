@@ -24,7 +24,7 @@
 
     if ($libera === 1){
         mostrador();
-        header("refresh:5; url=../funcao.html");
+        header("refresh:5; url=../uni.html");
     }
 
 

@@ -24,16 +24,11 @@
                         <a href="multi.html">Multidimensionais</a>
                     </div>
                 </div>
-                <div class="submenu">
-                    <a href="#">Membros &#9662;</a>
-                    <div class="submenu-conteudo">
-                        <a href="membros.html">Membros</a>
-                    </div>
-                </div>
+                
             </div>
         </div>
     </header>
-
+    <h3>Exemplos de vetores Unidimensionais em PHP</h3>
     <main class="main-content">
 
         <div class="seletor-container">
@@ -43,28 +38,152 @@
         </div>
 
         <div class="caixa-container">
-            <label for="texto1">Exemplo de Código 1</label>
-            <textarea id="texto1" placeholder="Digite ou cole seu texto aqui...">sei la so testc</textarea>
+            <label for="texto1">mostra numeros dentro de um vetor</label>
+            <textarea id="texto1" >
+                <?php
+                    // exemplo de vetor unidimensional
+                    
+                    $libera = 1;
+                    //o $libera controla a execucao da funcao mostrador
+                    $numeros=[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16,
+                     17, 18, 19, 20];
+                    //aqui e salvo os numeros para realizar o teste.
+
+                    function mostrador(){
+                    global $numeros;
+                        echo "Mostrando os numeros dentro do vetor: <br>";
+                        //percorre o vetor numeros
+                        $test = 20;
+                        for ($i = 0; $i <= $test; $i++) {
+                            
+                                echo $numeros[$i] . "<br>";
+                            
+                        }
+                        finalmensagem();
+                    }
+                    function finalmensagem(){
+                        echo "Mostramos todos os numeros pares, Ate a proxima <br>";
+                    }
+
+                    if ($libera === 1){
+                        mostrador();
+                        header("refresh:5; url=../uni.html");
+                    }
+
+
+
+                ?>
+            </textarea>
             <div class="botoes-container">
-                <button>Ver Exemplo</button>
+                <form action="php/baggiouni.php" method="POST">
+                    <button type="submit" >Ver Exemplo</button>
+                </form>
                
             </div>
         </div>
 
         <div class="caixa-container">
-            <label for="texto2">Exemplo de Código 2</label>
-            <textarea id="texto2" placeholder="Digite ou cole seu texto aqui..."></textarea>
+            <label for="texto2">armazena marcas</label>
+            <textarea id="texto2" >
+                <?php
+                    //Criação do array com a função carros.
+                    $array = ["Hyundai", "Toyota", "Honda", "Ford", "Renault"];
+
+                    //função que exibe os carros do array.
+                    function carros($array){
+                        echo "<h3>Lista de Carros:</h3>";
+                        //foreach para percorrer o array e exibir os carros.
+                        //'as $carro' é a variável que recebe cada valor do array.
+                        //Dentro do bloco {}, você pode usar $carro para acessar o 
+                        valor do elemento atual.
+                        foreach($array as $carro){
+                            echo "- " . $carro . "<br>";
+                        }
+
+                        header("refresh:10; url=../christopherUni.html");
+                    }
+
+                    //Chama a função carros.
+                        carros($array);
+
+                    ?>
+            </textarea>
             <div class="botoes-container">
-                <button>Ver Exemplo</button>
+                 <form action="php/christopherUni.php" method="POST">
+                    <button type="submit" >Ver Exemplo</button>
+                </form>
                 
             </div>
         </div>
 
         <div class="caixa-container">
-            <label for="texto3">Exemplo de Código 3</label>
-            <textarea id="texto3" placeholder="Digite ou cole seu texto aqui..."></textarea>
+            <label for="texto3">armazena dados de pessoas</label>
+            <textarea id="texto3" >
+                <?php
+                    /*O código cria um array de pessoas, cada uma com nome e idade,
+                     percorre todos os elementos exibindo seus nomes e idades, e ao 
+                     mesmo tempo verifica quem é a pessoa mais velha e a mais nova.
+                     Ao final, imprime no navegador o nome e a idade da pessoa mais 
+                     jovem e da mais velha.*/
+                    
+                    //Exemplo de array que armazena nomes e idades de pessoas e exibe 
+                    todos os nomes e idades e ao final do codigo exibe quem é o mais 
+                    velho e quem é o mais novo.
+                    $pessoas = [
+                        ["nome" => "Ana", "idade" => 28],
+                        ["nome" => "Bruno", "idade" => 34],
+                        ["nome" => "Carla", "idade" => 22],
+                        ["nome" => "Daniel", "idade" => 45],
+                        ["nome" => "Eva", "idade" => 19]
+                    ];
+
+                    // Inicializa as variáveis para armazenar a pessoa mais velha e a 
+                    mais nova
+                    $maisVelho = $pessoas[0];
+                    $maisNovo = $pessoas[0];
+
+                    echo "<h1> Lista de Pessoas: </h1>\n";
+                    // Percorre o array de pessoas e exibe seus nomes e idades
+                    //foreach -- Estrutura de repetição que percorre todos os 
+                    elementos de um array
+                    //$pessoa -- Variável temporária que recebe cada elemento do 
+                    array 
+                    $pessoas a cada iteração
+                    foreach ($pessoas as $pessoa) 
+                    {
+                        echo "Nome: " . $pessoa["nome"] . ", Idade: " 
+                        . $pessoa["idade"] . " anos<br><br>";
+
+                        //Verifica se a idade da pessoa atual é maior que a da pessoa 
+                        armazenada em $maisVelho
+                        //Se sim, atualiza $maisVelho com essa pessoa
+                        if ($pessoa["idade"] > $maisVelho["idade"]) 
+                        {
+                            $maisVelho = $pessoa;
+                        }
+
+                        //Verifica se a idade da pessoa atual é menor que a da pessoa 
+                        armazenada em $maisNovo
+                        //Se sim, atualiza $maisNovo com essa pessoa
+                        if ($pessoa["idade"] < $maisNovo["idade"]) 
+                        {
+                            $maisNovo = $pessoa;
+                        }
+                    }
+                    //Exibe quem é a pessoa mais nova e mais velha com seus nomes e 
+                    idades
+                    echo "<br>Pessoa mais nova: " . $maisNovo["nome"] . " 
+                    (" . $maisNovo["idade"] . " anos)<br>";
+                    echo "<br>Pessoa mais velha: " . $maisVelho["nome"] . " 
+                    (" . $maisVelho["idade"] . " anos)<br>";
+                    header("refresh:10; url=../uni.html");
+                    
+                ?>
+            </textarea>
             <div class="botoes-container">
-                <button>Ver Exemplo</button>
+                 <form action="php/vitorUni.php" method="POST">
+                    <button type="submit" >Ver Exemplo</button>
+                </form>
                 
             </div>
         </div>

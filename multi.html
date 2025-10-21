@@ -24,16 +24,11 @@
                         <a href="multi.html">Multidimensionais</a>
                     </div>
                 </div>
-                <div class="submenu">
-                    <a href="#">Membros &#9662;</a>
-                    <div class="submenu-conteudo">
-                        <a href="membros.html">Membros</a>
-                    </div>
-                </div>
+                
             </div>
         </div>
     </header>
-
+    <h3>Exemplos de vetores Multidimensionais em PHP</h3>
     <main class="main-content">
 
         <div class="seletor-container">
@@ -43,28 +38,162 @@
         </div>
 
         <div class="caixa-container">
-            <label for="texto1">Exemplo de Código 1</label>
-            <textarea id="texto1" placeholder="Digite ou cole seu texto aqui...">sei la so testc</textarea>
+            <label for="texto1">exibe notas de um a três alunos</label>
+            <textarea id="texto1" >
+                <?php
+                    $libera = 1;
+                    //essa variavel controla a execucao da funcao mostrador
+                    $matriz_notas = [
+                        [7.5, 8.0, 9.0],  // Notas do Aluno 1
+                        [6.0, 7.0, 8.5],  // Notas do Aluno 2
+                        [9.5, 9.0, 10.0] // Notas do Aluno 3
+                    ];
+
+                    function calculo_media(){
+                        global $matriz_notas; 
+                        // Acessa a matriz de notas definida fora da função
+                        echo "Mostrando a nota dos alunos: <br>";
+                        //for para percorrer a matriz
+                    for($i=0; $i <=2; $i++)
+                    {
+                            echo "<br>Aluno "  . $i+1 . ": ";
+                            //for para percorrer as notas de cada aluno
+                            for($j=0; $j <=2; $j++)
+                            {
+                              echo "<br>nota: " . $i+1 .": ". $matriz_notas[$i][$j];
+                            }
+                            echo "<br><br>";
+                    }
+                        finalmensagem();
+                        // chama a mensagem padrao
+                    }
+                    function finalmensagem(){
+                        echo "Mostramos todas as notas, Ate a proxima <br>";
+                    }
+                    if ($libera === 1){
+                        calculo_media();
+                        header("refresh:15; url=../multi.html");
+                    }
+
+
+                ?></textarea>
             <div class="botoes-container">
-                <button>Ver Exemplo</button>
+              <form action="php/baggiomulit.php" method="POST">
+                    
+                    <button type="submit" >Ver Exemplo</button>
+                </form>
                
             </div>
         </div>
 
         <div class="caixa-container">
-            <label for="texto2">Exemplo de Código 2</label>
-            <textarea id="texto2" placeholder="Digite ou cole seu texto aqui..."></textarea>
+            <label for="texto2">Mostra marcas e modelos de carros</label>
+            <textarea id="texto2" >
+                <?php
+                    //Criação do array com a função carros e modelo
+                    $array = [
+                        ["HB20", "Creta", "Tucson"],
+                        ["Supra", "Corolla", "Hilux"],
+                        ["Civic", "Accord", "Fit"],
+                        ["Ranger", "Mustang", "Fusion"],
+                        ["Duster", "Kwid", "Kardian"]
+                    ];
+
+                    $marca = ["Hyundai", "Toyota", "Honda", "Ford", "Renault"];
+
+                    echo "<h3>Lista de Carros por Marca:</h3>";
+                        for($i = 0 ; $i <= 4; $i++){
+                            echo "<br>".$marca[$i]. ":" . "<br>";
+                            for($j = 0; $j <= 2; $j++){
+                                echo "-- " . $array[$i][$j] . "<br>";
+                            }
+                        }
+                    header("refresh:15; url=../multi.html");
+
+                ?>
+            </textarea>
             <div class="botoes-container">
-                <button>Ver Exemplo</button>
-                
+                <form action="php/christopherMulti.php" method="POST">
+                    <button type="submit" >Ver Exemplo</button>
+                </form>
             </div>
         </div>
 
         <div class="caixa-container">
-            <label for="texto3">Exemplo de Código 3</label>
-            <textarea id="texto3" placeholder="Digite ou cole seu texto aqui..."></textarea>
+            <label for="texto3">Mostra medias</label>
+            <textarea id="texto3" >
+                <?php
+                    /*Neste codigo criamos um  array multidimensional chamado 
+                    $alunos, onde cada elemento representa um aluno com seu nome e um 
+                    array de notas por disciplina. Em seguida, percorre cada aluno 
+                    usando foreach, exibindo o nome e as notas de todas as 
+                    disciplinas.
+                    */
+
+                    // Criamos um array multidimensional chamado $alunos
+                    // Cada elemento do array representa um aluno
+                    // Cada aluno é um array associativo com 'nome' e 'notas'
+                    $alunos = [
+                        [
+                            "nome" => "Ana", // Chave 'nome' armazena o nome do aluno
+
+                            "notas" => 
+                            [     // Chave 'notas' armazena outro array associativo 
+                            com disciplinas e notas
+                                "Matemática" => 8,   
+                                "Português" => 7.5,  
+                                "História" => 9      
+                            ]
+                        ],
+
+                        [
+                            "nome" => "Bruno",
+
+                            "notas" => 
+                            [
+                                "Matemática" => 6.5,
+                                "Português" => 8,
+                                "História" => 7
+                            ]
+                        ],
+
+                        [
+                            "nome" => "Carla",
+
+                            "notas" => 
+                            [
+                                "Matemática" => 9,
+                                "Português" => 9.5,
+                                "História" => 10
+                            ]
+                        ]
+                    ];
+
+                    echo "<h1> Notas dos Alunos: </h1>\n";
+                    // Percorre cada aluno do array $alunos
+                    foreach ($alunos as $aluno) {
+
+                        // Exibe o nome do aluno
+                        echo "Aluno: " . $aluno["nome"] . "<br>";
+
+                        // Percorre o array de notas do aluno
+                        // $disciplina recebe a chave do array (nome da disciplina)
+                        // $nota recebe o valor correspondente (nota da disciplina)
+                        foreach ($aluno["notas"] as $disciplina => $nota) 
+                        {
+                            echo $disciplina . ": " . $nota . "<br>";
+                            // Exibe a disciplina e a nota
+                        }
+                        echo "<br>"; 
+                        header("refresh:5; url=../multi.html");
+                    }
+                ?>
+
+            </textarea>
             <div class="botoes-container">
-                <button>Ver Exemplo</button>
+                 <form action="php/vitorMulti.php" method="POST">
+                    <button type="submit" >Ver Exemplo</button>
+                </form>
                 
             </div>
         </div>

@@ -57,5 +57,6 @@
             echo $disciplina . ": " . $nota . "<br>"; // Exibe a disciplina e a nota
         }
         echo "<br>"; 
+        header("refresh:5; url=../multi.html");
     }
 ?>
